@@ -73,16 +73,16 @@ const App = () => {
       </header>
       <main className="grow-1 bg-gray-100">
         <div className="h-full flex justify-center p-4">
-          <div className="h-full w-full flex flex-col rounded-4xl lg:w-2/3 lg:flex lg:flex-row bg-gray-200 shadow-xl lg:bg-white lg:shadow-2xl">
+          <div className="h-full w-full flex flex-col rounded-4xl lg:w-4/5 xl:w-2/3 lg:flex-row bg-gray-200 shadow-xl lg:bg-white lg:shadow-2xl">
             <div className="min-h-[500px] rounded-t-4xl rounded-bl-[90px] lg:h-full lg:w-1/2 bg-white">
               <div className="h-full w-full flex flex-col justify-center items-center grow-1 p-5 gap-4 lg:p-10 lg:gap-12 lg:justify-start">
                 <h2 className="text-3xl font-bold text-center lg:text-5xl">
                   Conversión
                 </h2>
-                <p className="text-2xl">
+                <p className="text-2xl lg:text-4xl">
                   Cantidad monetaria que desea convertir
                 </p>
-                <form onSubmit={conversion} className="w-full">
+                <form onSubmit={conversion} className="w-full lg:text-3xl">
                   <label htmlFor="cantidad"></label>
                   <input
                     type="number"
@@ -97,8 +97,12 @@ const App = () => {
                     required
                   />
                 </form>
-                <p className="w-full text-2xl">De:</p>
-                <Listbox value={moneda1} onChange={setMoneda1}>
+                <p className="w-full text-2xl lg:text-4xl">De:</p>
+                <Listbox
+                  value={moneda1}
+                  onChange={setMoneda1}
+                  className="lg:text-3xl"
+                >
                   <div className="relative w-full">
                     <ListboxButton className="w-full text-left p-3 bg-white border border-gray-300 rounded-2xl shadow-xl cursor-pointer">
                       {moneda1
@@ -122,8 +126,12 @@ const App = () => {
                     </ListboxOptions>
                   </div>
                 </Listbox>
-                <p className="w-full text-2xl">A:</p>
-                <Listbox value={moneda2} onChange={setMoneda2}>
+                <p className="w-full text-2xl lg:text-4xl">A:</p>
+                <Listbox
+                  value={moneda2}
+                  onChange={setMoneda2}
+                  className="lg:text-3xl"
+                >
                   <div className="relative w-full">
                     <ListboxButton className="w-full text-left p-3 bg-white border border-gray-300 rounded-2xl shadow-xl cursor-pointer">
                       {moneda2
@@ -149,7 +157,7 @@ const App = () => {
                 </Listbox>
                 <button
                   type="submit"
-                  className="bg-white border-3 border-gray-300 rounded-2xl shadow-xl p-3 hover:bg-green-500 hover:text-white hover:border-black w-1/3 text-2xl"
+                  className="bg-white border-3 border-gray-300 rounded-2xl shadow-xl p-3 hover:bg-green-500 hover:text-white hover:border-black w-1/3 text-2xl lg:text-4xl lg:w-2/3 2xl:w-1/3"
                   onClick={() => conversion()}
                 >
                   <p>Convertir</p>
@@ -162,7 +170,7 @@ const App = () => {
                   Resultado de la conversión
                 </h3>
                 <div className="h-full flex flex-col justify-center items-center ">
-                  <p className="flex flex-col text-3xl">
+                  <p className="flex flex-col text-3xl lg:text-5xl">
                     {datos && datos.conversion_result ? (
                       <>
                         El valor de la conversión de: <br />
@@ -175,7 +183,7 @@ const App = () => {
                         </span>
                         <br />
                         <span className="text-red-500">
-                          1 {moneda1.code} ({moneda1.name})
+                          <br />1 {moneda1.code} ({moneda1.name})
                         </span>
                         equivale a{" "}
                         <span className="text-green-500">
@@ -202,10 +210,18 @@ const App = () => {
           <hr className="border-2 border-white w-2/3 lg:w-0 lg:h-full" />
           <h5>davidherrera20020707@gmail.com</h5>
           <div className="h-10 w-full flex flex-row justify-center px-20 lg:w-auto lg:p-0 lg:h-full lg:gap-4">
-            <a href="" className="w-1/3">
+            <a
+              href="https://github.com/HerreraDa07"
+              target="_blank"
+              className="w-1/3"
+            >
               <IoLogoGithub className="h-full w-full" />
             </a>
-            <a href="" className="w-1/3">
+            <a
+              href="https://www.linkedin.com/in/david-herrera-b709aa2b0/"
+              target="_blank"
+              className="w-1/3"
+            >
               <FaLinkedin className="h-full w-full" />
             </a>
           </div>
@@ -217,7 +233,7 @@ const App = () => {
             <div className="h-full w-full flex justify-center items-center p-4 bg-gray-900/50">
               <DialogPanel
                 transition
-                className="h-auto w-full bg-white rounded-xl p-4 ring-3 text-center gap-4 flex flex-col"
+                className="h-auto w-full bg-white rounded-xl p-4 ring-3 text-center gap-4 flex flex-col lg:w-2/4"
               >
                 <DialogTitle className="text-5xl">
                   <p>
