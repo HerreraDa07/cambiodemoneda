@@ -1,0 +1,14 @@
+@import "tailwindcss";
+@import "@fontsource/mochiy-pop-one";
+@import "@fontsource/kalam";
+@import "@fontsource/caveat-brush";
+header,
+footer {
+  font-family: "Mochiy Pop One", sans-serif;
+}
+main {
+  font-family: "Kalam", cursive;
+}
+p {
+  font-family: "Caveat Brush", cursive;
+}
